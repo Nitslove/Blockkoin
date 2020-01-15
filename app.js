@@ -286,7 +286,7 @@ function startsAt(res){
 
 if (module === require.main) {
     // Start the server
-    var server = app.listen(process.env.PORT || 8000, function () {
+    var server = app.listen(process.env.PORT || 8085, function () {
         var port = server.address().port;
         console.log('App listening on port %s', port);
     });
