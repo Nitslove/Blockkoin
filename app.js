@@ -248,37 +248,37 @@ function startsAt(res){
 }
 
 //Buy token of the contract address provided above by "NoEther" ether form "FromAddress".
-function BuyToken(res,NoEther,FromAddress,PrivateKey){
-    var count = web3.eth.getTransactionCount(FromAddress);
-    var gasPrice = web3.eth.gasPrice;
-    var gasLimit = 300000;
+// function BuyToken(res,NoEther,FromAddress,PrivateKey){
+//     var count = web3.eth.getTransactionCount(FromAddress);
+//     var gasPrice = web3.eth.gasPrice;
+//     var gasLimit = 300000;
 
-    var rawTransaction = {
-        "from": FromAddress,
-        "nonce": web3.toHex(count),
-        "gasPrice": web3.toHex(gasPrice),
-        "gasLimit": web3.toHex(gasLimit),
-        "to": contractAddress_ico,
-        "value": web3.toHex(NoEther),
-    };
+//     var rawTransaction = {
+//         "from": FromAddress,
+//         "nonce": web3.toHex(count),
+//         "gasPrice": web3.toHex(gasPrice),
+//         "gasLimit": web3.toHex(gasLimit),
+//         "to": contractAddress_ico,
+//         "value": web3.toHex(NoEther),
+//     };
     
     
 
-    var privKey = new Buffer(PrivateKey, 'hex');
+//     var privKey = new Buffer(PrivateKey, 'hex');
     
-    var tx = new Tx(rawTransaction);
+//     var tx = new Tx(rawTransaction);
 
-    tx.sign(privKey);
-    var serializedTx = tx.serialize();
+//     tx.sign(privKey);
+//     var serializedTx = tx.serialize();
    
 
-    web3.eth.sendRawTransaction('0x' + serializedTx.toString('hex'), function(err, hash) {
-        if (!err){
-            res.contentType('application/json');
-            res.end(JSON.stringify(hash));
-        }
-    });
-}
+//     web3.eth.sendRawTransaction('0x' + serializedTx.toString('hex'), function(err, hash) {
+//         if (!err){
+//             res.contentType('application/json');
+//             res.end(JSON.stringify(hash));
+//         }
+//     });
+// }
 
 
 
